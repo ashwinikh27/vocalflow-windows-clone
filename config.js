@@ -1,0 +1,1 @@
+export const DEEPGRAM_API_KEY = "demo_key_123";
