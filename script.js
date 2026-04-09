@@ -35,26 +35,26 @@ recognition.onresult = function (event) {
     let transcript = event.results[i][0].transcript;
 
     if (event.results[i].isFinal) {
-      //  removed extra space here
+    
       newFinalText += processText(transcript);
     } else {
       interimText += transcript;
     }
   }
 
-  //  trim to remove unwanted spaces
+ 
   finalText = newFinalText.trim();
 
   const fullText = finalText + interimText;
 
-  // Show both final + interim
+  
   document.getElementById("output").value = fullText;
 
-  //  fixed character count
+  
   document.getElementById("charCount").innerText =
     fullText.trim().length + " characters";
 
-  // Copy only final
+  
   navigator.clipboard.writeText(finalText);
 
   document.getElementById("status").innerText = "🎤 Listening...";
@@ -109,7 +109,7 @@ window.clearText = function () {
   finalText = "";
   document.getElementById("output").value = "";
   
-  //  reset character count
+ 
   document.getElementById("charCount").innerText = "0 characters";
 
   document.getElementById("status").innerText = "🧹 Cleared";
